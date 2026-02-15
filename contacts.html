@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты / Отзывы — ЗадачникЪ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4361ee',
+            neutral: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .focus-ring {
+        @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+      }
+      .btn-primary {
+        @apply bg-primary text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200;
+      }
+      .card {
+        @apply bg-white rounded-xl p-6 border border-neutral-200 transition-all duration-200;
+      }
+      .accordion-header {
+        @apply flex justify-between items-center cursor-pointer w-full text-left font-semibold text-lg mb-2;
+      }
+      .accordion-icon {
+        @apply transition-transform duration-300;
+      }
+      .accordion-icon.open {
+        @apply rotate-180;
+      }
+      .accordion-content {
+        @apply overflow-hidden transition-all duration-300 max-h-0 opacity-0;
+      }
+      .accordion-content.open {
+        @apply max-h-96 opacity-100;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans bg-neutral-50 text-neutral-800">
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+          <i class="fas fa-tasks text-xl"></i>
+        </div>
+        <span class="text-xl font-bold text-gray-800">ЗадачникЪ</span>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="focus-ring hover:text-primary transition-colors">Главная</a>
+        <a href="calendar.html" class="focus-ring hover:text-primary transition-colors">Календарь</a>
+        <a href="contacts.html" class="focus-ring hover:text-primary transition-colors font-semibold text-primary">Контакты / Отзывы</a>
+      </nav>
+      
+      <div class="hidden md:flex items-center space-x-4">
+        <button class="text-gray-600 hover:text-gray-800 focus-ring">Войти</button>
+        <button class="btn-primary text-sm px-4 py-2">
+          Регистрация
+        </button>
+      </div>
+      
+      <button class="md:hidden focus-ring text-gray-700">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="pt-24 pb-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Свяжитесь с нами</h1>
+        <p class="text-neutral-600 max-w-2xl mx-auto">
+          У вас есть вопросы или отзывы? Мы всегда рады помочь вам!
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-6">Контактная информация</h2>
+          
+          <div class="mb-6">
+            <h3 class="font-semibold mb-2 text-neutral-700">Адрес</h3>
+            <p class="text-neutral-600">125009, Москва, ул. Тверская, д. 1</p>
+          </div>
+          
+          <div class="mb-6">
+            <h3 class="font-semibold mb-2 text-neutral-700">Телефон</h3>
+            <p class="text-neutral-600">+7 (495) 123-45-67</p>
+          </div>
+          
+          <div class="mb-6">
+            <h3 class="font-semibold mb-2 text-neutral-700">Email</h3>
+            <p class="text-neutral-600">support@zadachnik.ru</p>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-2 text-neutral-700">Социальные сети</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-neutral-400 hover:text-neutral-600 focus-ring w-10 h-10 rounded-full bg-neutral-50 flex items-center justify-center transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-neutral-400 hover:text-neutral-600 focus-ring w-10 h-10 rounded-full bg-neutral-50 flex items-center justify-center transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-neutral-400 hover:text-neutral-600 focus-ring w-10 h-10 rounded-full bg-neutral-50 flex items-center justify-center transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-neutral-400 hover:text-neutral-600 focus-ring w-10 h-10 rounded-full bg-neutral-50 flex items-center justify-center transition-colors">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h2 class="text-2xl font-bold mb-6">Форма обратной связи</h2>
+          
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block text-neutral-700 font-medium mb-2">Имя</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+            </div>
+            
+            <div class="mb-4">
+              <label for="email" class="block text-neutral-700 font-medium mb-2">Email</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+            </div>
+            
+            <div class="mb-4">
+              <label for="subject" class="block text-neutral-700 font-medium mb-2">Тема</label>
+              <select id="subject" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                <option value="">Выберите тему</option>
+                <option value="general">Общие вопросы</option>
+                <option value="technical">Техническая поддержка</option>
+                <option value="feedback">Отзывы и предложения</option>
+                <option value="billing">Вопросы по оплате</option>
+              </select>
+            </div>
+            
+            <div class="mb-4">
+              <label for="message" class="block text-neutral-700 font-medium mb-2">Сообщение</label>
+              <textarea id="message" rows="5" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+            </div>
+            
+            <div class="mb-6">
+              <label class="flex items-start">
+                <input type="checkbox" class="mt-1 mr-2 text-primary rounded focus:ring-primary" required>
+                <span class="text-neutral-600">Я согласен с обработкой моих персональных данных</span>
+              </label>
+            </div>
+            
+            <button type="submit" class="btn-primary w-full py-3 text-base">
+              Отправить сообщение
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2 class="text-2xl font-bold mb-6">Часто задаваемые вопросы</h2>
+        
+        <div class="space-y-4">
+          <div class="border-b border-neutral-200 pb-4">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Как добавить новую задачу в календарь?</span>
+              <i class="fas fa-chevron-down accordion-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <p class="text-neutral-600 mt-2">
+                Чтобы добавить новую задачу, нажмите на кнопку "+ Создать задачу" в календаре. 
+                Заполните форму с названием задачи, датой и приоритетом, затем нажмите "Сохранить".
+              </p>
+            </div>
+          </div>
+          
+          <div class="border-b border-neutral-200 pb-4">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Можно ли синхронизировать календарь с другими приложениями?</span>
+              <i class="fas fa-chevron-down accordion-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <p class="text-neutral-600 mt-2">
+                Да, ЗадачникЪ поддерживает синхронизацию с Google Calendar и Outlook. 
+                Для этого перейдите в настройки аккаунта и выберите нужное приложение.
+              </p>
+            </div>
+          </div>
+          
+          <div class="border-b border-neutral-200 pb-4">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Как изменить приоритет задачи?</span>
+              <i class="fas fa-chevron-down accordion-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <p class="text-neutral-600 mt-2">
+                Чтобы изменить приоритет задачи, откройте её в календаре, нажмите на кнопку 
+                редактирования и выберите нужный уровень приоритета из выпадающего списка.
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Как экспортировать данные в формате CSV?</span>
+              <i class="fas fa-chevron-down accordion-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <p class="text-neutral-600 mt-2">
+                Перейдите в раздел "Экспорт данных" в настройках приложения. 
+                Выберите формат CSV и нажмите "Экспортировать". 
+                Файл будет загружен автоматически.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact" class="py-12 bg-gray-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+              <i class="fas fa-tasks text-xl"></i>
+            </div>
+            <span class="text-xl font-bold">ЗадачникЪ</span>
+          </div>
+          <p class="text-gray-300 mb-4">
+            Умный планировщик задач для современных профессионалов. Повышаем продуктивность с 2024 года.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Навигация</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-300 hover:text-white focus-ring block py-1">Главная</a></li>
+            <li><a href="calendar.html" class="text-gray-300 hover:text-white focus-ring block py-1">Календарь</a></li>
+            <li><a href="contacts.html" class="text-gray-300 hover:text-white focus-ring block py-1">Контакты / Отзывы</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Ресурсы</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">Документация</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">Блог</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">API</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">Помощь</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Контакты</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+              <span class="text-gray-300 hover:text-white">support@zadachnik.ru</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone mt-1 mr-3 text-primary"></i>
+              <span class="text-gray-300 hover:text-white">+7 (495) 123-45-67</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+              <span class="text-gray-300 hover:text-white">Москва, Россия</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+        <p class="mb-2">&copy; 2026 ЗадачникЪ. Все права защищены.</p>
+        <div class="flex justify-center space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white focus-ring text-sm">Политика конфиденциальности</a>
+          <a href="#" class="text-gray-400 hover:text-white focus-ring text-sm">Пользовательское соглашение</a>
+          <a href="#" class="text-gray-400 hover:text-white focus-ring text-sm">Карта сайта</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const checkbox = document.querySelector('input[type="checkbox"]');
+      if (!checkbox.checked) {
+        alert('Пожалуйста, подтвердите согласие на обработку данных');
+        return;
+      }
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      if (!name || !email || !message) {
+        alert('Пожалуйста, заполните все обязательные поля');
+        return;
+      }
+      
+      alert('Сообщение успешно отправлено!');
+      this.reset();
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+      });
+    });
+    
+    // Функция для аккордеона
+    function toggleAccordion(button) {
+      const icon = button.querySelector('.accordion-icon');
+      const content = button.nextElementSibling;
+      
+      icon.classList.toggle('open');
+      content.classList.toggle('open');
+      
+      // Если открываем, устанавливаем max-height
+      if (content.classList.contains('open')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = '0px';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница не найдена — ЗадачникЪ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4361ee',
+            neutral: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .focus-ring {
+        @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+      }
+      .btn-primary {
+        @apply bg-primary text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200;
+      }
+      .card {
+        @apply bg-white rounded-xl p-6 border border-neutral-200 transition-all duration-200;
+      }
+      .error-container {
+        @apply flex flex-col items-center justify-center min-h-screen px-4;
+      }
+      .error-icon {
+        @apply text-8xl text-primary mb-6 animate-pulse;
+      }
+      .error-title {
+        @apply text-5xl md:text-7xl font-bold text-neutral-800 mb-4;
+      }
+      .error-description {
+        @apply text-xl text-neutral-600 max-w-2xl text-center mb-8;
+      }
+      .error-actions {
+        @apply flex flex-col sm:flex-row gap-4;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans bg-neutral-50 text-neutral-800">
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+          <i class="fas fa-tasks text-xl"></i>
+        </div>
+        <span class="text-xl font-bold text-gray-800">ЗадачникЪ</span>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="focus-ring hover:text-primary transition-colors">Главная</a>
+        <a href="calendar.html" class="focus-ring hover:text-primary transition-colors">Календарь</a>
+        <a href="contacts.html" class="focus-ring hover:text-primary transition-colors">Контакты / Отзывы</a>
+      </nav>
+      
+      <div class="hidden md:flex items-center space-x-4">
+        <button class="text-gray-600 hover:text-gray-800 focus-ring">Войти</button>
+        <button class="btn-primary text-sm px-4 py-2">
+          Регистрация
+        </button>
+      </div>
+      
+      <button class="md:hidden focus-ring text-gray-700">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="pt-24 pb-16">
+    <div class="error-container">
+      <div class="error-icon">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      
+      <h1 class="error-title">404</h1>
+      <p class="error-description">
+        Ой! Похоже, вы потерялись в пространстве задач. Эта страница не существует или была перемещена.
+      </p>
+      
+      <div class="error-actions">
+        <a href="index.html" class="btn-primary text-lg px-8 py-4">
+          <i class="fas fa-home mr-2"></i>Вернуться на главную
+        </a>
+        <a href="javascript:history.back()" class="text-neutral-700 hover:text-neutral-900 focus-ring border border-neutral-300 rounded-lg px-8 py-4 transition-colors text-lg">
+          <i class="fas fa-arrow-left mr-2"></i>Назад
+        </a>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-neutral-600">
+          Не переживайте! Нажмите на кнопку выше, чтобы вернуться на безопасную территорию.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact" class="py-12 bg-gray-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+              <i class="fas fa-tasks text-xl"></i>
+            </div>
+            <span class="text-xl font-bold">ЗадачникЪ</span>
+          </div>
+          <p class="text-gray-300 mb-4">
+            Умный планировщик задач для современных профессионалов. Повышаем продуктивность с 2024 года.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white focus-ring w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Навигация</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-300 hover:text-white focus-ring block py-1">Главная</a></li>
+            <li><a href="calendar.html" class="text-gray-300 hover:text-white focus-ring block py-1">Календарь</a></li>
+            <li><a href="contacts.html" class="text-gray-300 hover:text-white focus-ring block py-1">Контакты / Отзывы</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Ресурсы</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">Документация</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">Блог</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">API</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">Помощь</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Контакты</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+              <span class="text-gray-300 hover:text-white">support@zadachnik.ru</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone mt-1 mr-3 text-primary"></i>
+              <span class="text-gray-300 hover:text-white">+7 (495) 123-45-67</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+              <span class="text-gray-300 hover:text-white">Москва, Россия</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+        <p class="mb-2">&copy; 2026 ЗадачникЪ. Все права защищены.</p>
+        <div class="flex justify-center space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white focus-ring text-sm">Политика конфиденциальности</a>
+          <a href="#" class="text-gray-400 hover:text-white focus-ring text-sm">Пользовательское соглашение</a>
+          <a href="#" class="text-gray-400 hover:text-white focus-ring text-sm">Карта сайта</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const icon = document.querySelector('.error-icon');
+      setInterval(() => {
+        icon.classList.toggle('animate-pulse');
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

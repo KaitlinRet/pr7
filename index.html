@@ -39,7 +39,6 @@
   </style>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
-  <!-- 1. Фиксированный хедер с логотипом и навигацией -->
   <header class="fixed w-full bg-white shadow-md z-50">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <div class="flex items-center space-x-2">
@@ -51,15 +50,13 @@
       
       <nav class="hidden md:flex space-x-8">
         <a href="index.html" class="focus-ring hover:text-primary transition-colors font-semibold text-primary">Главная</a>
-        <a href="about.html" class="focus-ring hover:text-primary transition-colors">О нас</a>
         <a href="calendar.html" class="focus-ring hover:text-primary transition-colors">Календарь</a>
-        <a href="#features" class="focus-ring hover:text-primary transition-colors">Возможности</a>
-        <a href="#contact" class="focus-ring hover:text-primary transition-colors">Контакты</a>
+        <a href="contacts.html" class="focus-ring hover:text-primary transition-colors">Контакты / Отзывы</a>
       </nav>
       
       <div class="hidden md:flex items-center space-x-4">
         <button class="text-gray-600 hover:text-gray-800 focus-ring">Войти</button>
-        <button class="btn-primary text-sm px-4 py-2">
+        <button id="register-btn" class="btn-primary text-sm px-4 py-2">
           Регистрация
         </button>
       </div>
@@ -70,7 +67,6 @@
     </div>
   </header>
 
-  <!-- 2. Герой-секция с центрированным текстом и кнопкой -->
   <section id="home" class="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
@@ -82,14 +78,13 @@
           ЗадачникЪ поможет вам быть продуктивнее и не упустить важное.
         </p>
         
-        <button class="btn-primary text-lg px-12 py-4 w-full max-w-md mx-auto">
+        <button class="btn-primary text-lg px-12 py-4 w-full max-w-md mx-auto" href="calendar.html">
           <i class="fas fa-plus mr-2"></i>Начать бесплатно
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Статистика -->
   <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -113,7 +108,6 @@
     </div>
   </section>
 
-  <!-- 3. Секция «О проекте» с текстом и изображением -->
   <section id="about" class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row items-center">
@@ -188,16 +182,11 @@
               </div>
             </div>
           </div>
-          
-          <a href="about.html" class="inline-block mt-8 text-primary font-semibold hover:underline focus-ring">
-            Подробнее о нас →
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Сетка карточек (услуги, преимущества, особенности) -->
   <section id="features" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
@@ -208,7 +197,6 @@
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Карточка 1 -->
         <div class="feature-card">
           <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
             <i class="fas fa-calendar-alt text-primary text-3xl"></i>
@@ -217,12 +205,11 @@
           <p class="text-gray-600 mb-4">
             Просматривайте свои задачи в календарном формате, назначайте дедлайны и получайте уведомления заранее.
           </p>
-          <a href="calendar.html" class="text-primary font-medium hover:underline focus-ring inline-flex items-center">
+          <a href="404.html" class="text-primary font-medium hover:underline focus-ring inline-flex items-center">
             Перейти в календарь <i class="fas fa-arrow-right ml-2 text-xs"></i>
           </a>
         </div>
         
-        <!-- Карточка 2 -->
         <div class="feature-card">
           <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
             <i class="fas fa-chart-line text-primary text-3xl"></i>
@@ -231,12 +218,11 @@
           <p class="text-gray-600 mb-4">
             Отслеживайте свою продуктивность, анализируйте выполненные задачи и улучшайте свои привычки.
           </p>
-          <a href="#" class="text-primary font-medium hover:underline focus-ring inline-flex items-center">
+          <a href="404.html" class="text-primary font-medium hover:underline focus-ring inline-flex items-center">
             Подробнее →
           </a>
         </div>
         
-        <!-- Карточка 3 -->
         <div class="feature-card">
           <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
             <i class="fas fa-share-alt text-primary text-3xl"></i>
@@ -245,22 +231,14 @@
           <p class="text-gray-600 mb-4">
             Делитесь задачами с коллегами, назначайте ответственных и отслеживайте прогресс в реальном времени.
           </p>
-          <a href="#" class="text-primary font-medium hover:underline focus-ring inline-flex items-center">
+          <a href="404.html" class="text-primary font-medium hover:underline focus-ring inline-flex items-center">
             Подробнее →
           </a>
         </div>
       </div>
-      
-      <div class="text-center mt-12">
-        <button class="btn-primary text-lg px-8 py-4">
-          <i class="fas fa-rocket mr-2"></i>Начать использовать сейчас
-        </button>
-        <p class="text-gray-600 mt-3">Бесплатно для первых 30 дней • Без кредитной карты</p>
-      </div>
     </div>
   </section>
 
-  <!-- CTA секция -->
   <section class="py-16 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Готовы начать?</h2>
@@ -268,13 +246,12 @@
         Присоединяйтесь к тысячам довольных пользователей и начните управлять своими задачами эффективнее уже сегодня
       </p>
       
-      <button class="btn-primary bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
+      <button id="create-account-btn" class="btn-primary bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
         <i class="fas fa-user-plus mr-2"></i>Создать аккаунт
       </button>
     </div>
   </section>
 
-  <!-- 5. Футер с контактами и ссылками на соцсети -->
   <footer id="contact" class="py-12 bg-gray-800 text-white">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -308,10 +285,8 @@
           <h3 class="text-lg font-semibold mb-4">Навигация</h3>
           <ul class="space-y-3">
             <li><a href="index.html" class="text-gray-300 hover:text-white focus-ring block py-1">Главная</a></li>
-            <li><a href="about.html" class="text-gray-300 hover:text-white focus-ring block py-1">О нас</a></li>
             <li><a href="calendar.html" class="text-gray-300 hover:text-white focus-ring block py-1">Календарь</a></li>
-            <li><a href="#features" class="text-gray-300 hover:text-white focus-ring block py-1">Возможности</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-white focus-ring block py-1">Цены</a></li>
+            <li><a href="contacts.html" class="text-gray-300 hover:text-white focus-ring block py-1">Контакты / Отзывы</a></li>
           </ul>
         </div>
         
@@ -354,25 +329,82 @@
       </div>
     </div>
   </footer>
-
+  
+  <!-- Модальное окно регистрации -->
+  <div id="register-modal" class="task-modal hidden">
+    <div class="modal-content">
+      <button id="close-register-modal" class="modal-close">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <h3 class="text-xl font-bold mb-4">Регистрация</h3>
+      
+      <div class="mb-4">
+        <label for="full-name" class="block text-neutral-700 font-medium mb-2">ФИО</label>
+        <input type="text" id="full-name" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Иван Иванов">
+      </div>
+      
+      <div class="mb-4">
+        <label for="email" class="block text-neutral-700 font-medium mb-2">Email</label>
+        <input type="email" id="email" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="email@example.com">
+      </div>
+      
+      <div class="mb-4">
+        <label for="phone" class="block text-neutral-700 font-medium mb-2">Телефон</label>
+        <input type="tel" id="phone" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+7 (495) 123-45-67">
+      </div>
+      
+      <div class="flex justify-end space-x-3">
+        <button id="cancel-register" class="text-neutral-600 hover:text-neutral-800 focus-ring border border-neutral-300 rounded-lg px-4 py-2">
+          Отмена
+        </button>
+        <button id="save-register" class="btn-primary px-4 py-2">
+          Зарегистрироваться
+        </button>
+      </div>
+    </div>
+  </div>
+  
   <script>
-    // Анимация при скролле
     document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.card, .feature-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+      // Модальное окно регистрации
+      const registerModal = document.getElementById('register-modal');
+      const registerBtn = document.getElementById('register-btn');
+      const closeRegisterModalBtn = document.getElementById('close-register-modal');
+      const cancelRegisterBtn = document.getElementById('cancel-register');
+      const saveRegisterBtn = document.getElementById('save-register');
+      
+      // Обработчики событий
+      registerBtn.addEventListener('click', () => {
+        registerModal.classList.remove('hidden');
+      });
+      
+      closeRegisterModalBtn.addEventListener('click', () => {
+        registerModal.classList.add('hidden');
+      });
+      
+      cancelRegisterBtn.addEventListener('click', () => {
+        registerModal.classList.add('hidden');
+      });
+      
+      saveRegisterBtn.addEventListener('click', () => {
+        // Сохранение регистрации
+        const registration = {
+          fullName: document.getElementById('full-name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value
+        };
+        
+        console.log('Регистрация:', registration);
+        
+        // Закроем модальное окно
+        registerModal.classList.add('hidden');
+      });
+      
+      // Закрытие модального окна по клику вне его
+      document.addEventListener('click', (e) => {
+        if (e.target === registerModal) {
+          registerModal.classList.add('hidden');
+        }
       });
       
       // Плавная прокрутка для якорных ссылок
